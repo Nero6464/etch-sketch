@@ -1,7 +1,7 @@
 
 const grid = document.createElement('div');
 grid.classList.add('grid');
-grid.setAttribute('style', 'display: flex; flex-direction: column; justify-content: center; align-content: center;');
+grid.setAttribute('style', 'display: flex; flex-direction: column; justify-content: center; align-content: center; flex-wrap:wrap;');
 document.body.appendChild(grid);
 
 // const box = document.createElement('div');
@@ -14,16 +14,17 @@ document.body.appendChild(grid);
 // box2.textContent = 'Hello World!';
 // container.appendChild(box2);
 
+let size = 50;
 
-for(let j = 0; j < 16; j++){
+for(let j = 0; j < size; j++){
     const container = document.createElement('div');
     container.classList.add('container');
-    container.setAttribute('style', 'display: flex; justify-content: center; align-content: center;');
+    container.setAttribute('style', 'display: flex; width: 960px;');
     grid.appendChild(container);
-    for(let i = 0; i < 16; i++){
+    for(let i = 0; i < size; i++){
         const box = document.createElement('div');
         box.classList.add('box');
-        box.setAttribute('style', 'border-color: black; border-style: solid; border-width: 5px; background: white; color: white; width: 100px; height: 100px; display: flex;');
+        box.setAttribute('style', `border-color: black; border-style: solid; border-width: 1px; background: white; color: white; width: 100px; height: ${960 / size}px; display: flex;`);
         container.appendChild(box);
     }
 }
@@ -39,3 +40,4 @@ divs.forEach((box) => {
     })
 
 })
+
